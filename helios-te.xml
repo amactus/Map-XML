@@ -1,0 +1,64 @@
+<map proto="1.4.0">
+<name>Helios TE</name>
+<version>1.0.0</version>
+<objective>Capture the central hill then leak your opponents core.</objective>
+
+<authors>
+    <author uuid="503b5493-d591-4bc6-8346-e92609d94d76"> <!-- Magikarp -->
+</authors>
+<contributors>
+    <contributor contribution="XML" uuid="715769c5-8c4c-4489-bdf8-f9cee2b2ae8a"> <!-- amactus -->
+    <contributor contribution="Building" uuid="fd49fdb8-1552-46aa-a413-3945d3b5f8bc"> <!-- netcvb -->
+    <contributor contribution="Building" uuid="b6be29eb-3624-4baa-91c8-634f157a249e"> <!-- Monopoly -->
+    <contributor contribution="Building" uuid="9f0e3d6e-e872-43fb-aae8-ca329c077331"> <!-- Nawaffle -->
+    <contributor contribution="Building" uuid="0049288a-5dd2-4399-bb0a-a741857b0378"> <!-- Raptorshade -->
+    <contributor contribution="Building" uuid="d7cd15e2-573b-4491-b7e5-0574aeaf791c"> <!-- RadPan -->
+</contributors>
+
+<broadcasts>
+    <tip after="15s" every="5m">You must capture the central hill in order to leak the core!</tip>
+    <tip after="15s" every="5m">You cannot build near the hill.</tip>
+</broadcasts>
+
+<teams>
+    <team id="cyan" color="Cyan" max="5" max-overfill="8">Cyan</team>
+    <team id="magenta" color="Magenta" max="5" max-overfill="8">Magenta</team>
+</teams>
+
+<killreward>
+    <kit>
+        <item slot="6" material="golden apple"/>
+    </kit>
+</killreward>
+
+<modes>
+    <mode after="10m" material="gold_block"/>
+    <mode after="15m" material="glass"/>
+</modes>
+
+<maxbuildheight>60</maxbuildheight>
+
+<time>30m</time>
+
+<king>
+    <hills>
+        <hill name="Hill" capture-time="15s" points="1">
+            <capture><region id="hill"/></capture>
+            <progress><cuboid min="-5,71,-5" max="5,71,5"/></progress>
+        </hill>
+    </hills>
+</king>
+
+<portals>
+    <!-- Adds 110 to the players X position, Y, Z, pitch & yaw remain unchanged -->
+    <portal x="110">
+        <region><cuboid min="-56,33,-1" max="-55,35,2"/></region>
+    </portal>
+    <!-- Subtracts 110 from the players X position, Y, Z, pitch & yaw remain unchanged -->
+    <portal x="-110">
+        <region><cuboid min="56,33,-1" max="57,35,2"/></region>
+    </portal>
+</portals>
+
+</map>
+Status API Training Shop Blog About
