@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Rivalry CTW</name>
+<version>1.0</version>
+<objective>Attackers must destroy fight to capture the wool, defenders must stop them</objective>
+ 
+<!-- Map Authors and Contributors -->
+
+<authors>
+    <author uuid="9c8c6408-6741-4fcc-a62b-80175abb7f91" contribution="Map Maker"/> <!-- Exception_ -->
+</authors>
+<contributors>
+    <contributor uuid="715769c5-8c4c-4489-bdf8-f9cee2b2ae8a" contribution="XML & Asthetics"/> <!-- amactus -->
+    <contributor uuid="d697ff2d-7741-4382-a3df-96b3827b255c" contribution="WorldEdit Help"/> <!-- Entrope -->
+</contributors>
+ 
+<!-- Teams -->
+
+<teams>
+    <team id="yellow" color="yellow" max="16" max-overfill="20">Yellow</team>
+    <team id="green" color="lime green" max="16" max-overfill="20">Green</team>
+    <team id="defend" color="red" max="16" max-overfill="20">Defenders</team>
+</teams>
+ 
+<!-- Kits -->
+
+<kits>
+    <kit name="obs">
+        <potion duration="oo">night vision</potion>
+    </kit>
+    
+    <kit name="spawn" force="true">
+        <item slot="0">stone sword</item>
+	<item slot="1">bow
+	    <enchantment level="1">infinity</enchantment>
+	</item>
+	<item slot="2">iron pickaxe</item>
+	<item slot="3">stone axe"</item>
+	<item slot="4">iron shovel"</item>
+	<item slot="6" amount="16">17</item>
+	<item slot="28">arrow</item>
+	<potion duration="3" amplifier="5">regeneration</potion>
+    </kit>
+    
+    <kit name="yellow" parents="spawn">
+        <item slot="100" color="E5E533" locked="true">leather boots</item>
+        <item slot="101" color="E5E533" locked="true">leather leggins</item>
+        <item slot="102" color="E5E533" locked="true">leather chestplate</item>
+        <item slot="103" color="E5E533" locked="true">leather helmet</item>
+        <item slot="4" amount="64">159:4</item>
+    </kit>
+    <kit name="green" parents="spawn">
+        <item slot="100" color="7FCC19" locked="true">leather boots</item>
+        <item slot="101" color="7FCC19" locked="true">leather leggins</item>
+        <item slot="102" color="7FCC19" locked="true">leather chestplate</item>
+        <item slot="103" color="7FCC19" locked="true">leather helmet</item>
+        <item slot="4" amount="64">159:5</item>
+    </kit>
+    <kit name="defend" parents="spawn">
+        <item slot="100" color="993333" locked="true">leather boots</item>
+        <item slot="101" color="993333" locked="true">leather leggins</item>
+        <item slot="102" color="993333" locked="true">leather chestplate</item>
+        <item slot="103" color="993333" locked="true">leather helmet</item>
+        <item slot="4" amount="64">159:14</item>
+    </kit>
+</kits>
+
+<!-- Spawns -->
+
+<spawns>
+    <spawn>
+        <spawn team="defend" kit="defend">
+        <regions yaw="90">
+            <cuboid min="62,11,11" max="66,11,7"/>
+        </regions>
+    </spawn>
+    <spawn>
+        <spawn team="yellow" kit="yellow">
+        <regions yaw="90">
+            <cuboid min="-189,11,-53" max="-191,11,-55"/>
+        </regions>
+    </spawn>
+    <spawn>
+        <spawn team="green" kit="green">
+        <regions yaw="90">
+            <cuboid min="-191,11,71" max="-189,11,73"/>
+        </regions>
+    </spawn>
+    
+    <default kit="obs">
+        <regions yaw="0">
+            <cuboid min="0,96,10" max="2,96,8"/>
+        </regions>
+    </default>
+</spawns>
+
+<!-- Always Day -->
+
+<gamerules>
+    <doDaylightCycle>false</doDaylightCycle>
+</gamerules>
+ 
+
+<!-- Time Limit -->
+
+<time>15m</time>
+
+<!-- Wool -->
+
+<!-- Regions -->
+
+<regions>
+    <!-- Wool Room -->
+    <apply enter="only-blue" message="You may not enter the enemy wool room!">
+        <region>
+            <union>
+                <cylinder base="1,20,9" radius="17" height="20"/>
+            </union>
+        </region>
+    </apply>
+</regions>
+
+<!-- Item Removal -->
+
+<itemremove>
+    <item>arrow</item>
+    <item>iron sword</item>
+    <item>iron boots</item>
+    <item>leather chestplate</item>
+    <item>chainmail leggings</item>
+    <item>bow</item>
+    <item>diamond pickaxe</item>
+    <item>ironshovel</item>
+    <item>350:1</item>
+</itemremove>
+
+<wools>
+    <wool team="yellow" color="red" craftable="false">
+        <monument><block>-192,12,-53</block></monument>
+        <!-- Blue team has to place a lime wool block at 0.5,11,-92.5 to win -->
+    </wool>
+    <wool team="green" color="red" craftable="false">
+        <monument><block>-192,12,72</block></monument>
+        <!-- Light blue wool can not be crafted, it must be picked up -->
+    </wool>
+</wools>
+ 
+</map>
