@@ -1,0 +1,114 @@
+<map proto="1.4.0">
+<name>Day 1</name>
+<version>1.0</version>
+<objective>Gather resources to bridge to the enemy</objective>
+<authors>
+    <author uuid="715769c5-8c4c-4489-bdf8-f9cee2b2ae8a"/> <!--  amactus  -->
+</authors>
+
+<time>10m</time>
+<maxbuildheight>"21"</maxbuildheight>
+<gamerules>
+    <doDaylightCycle>false</doDaylightCycle>
+</gamerules>
+
+<teams>
+   <team id="red-team" color="dark red" max="4" max-overfill="5">Red</team>
+   <team id="blue-team" color="dark blue" max="4" max-overfill="5">Blue</team>
+   <team id="green-team" color="dark green" max="4" max-overfill="5">Green</team>
+   <team id="white-team" color="white" max="4" max-overfill="5">White</team>
+</teams>
+
+<!--  Scores  -->
+
+<score>
+    <limit>32</limit>
+    <kills>2</kills>
+    <deaths>1</deaths>
+</score>
+
+<killreward>
+    <kit>
+        <item slot="10" material="arrow" amount="8"/>
+        <potion duration="3">speed</potion>
+    </kit>
+     <filter>
+        <kill-streak count="3" repeat="true"/>
+    </filter>
+    <kit>
+        <item slot="6" material="golden apple"/>
+        <potion duration="3">speed</potion>
+    </kit>
+</killreward>
+
+<!--  Spawns  -->
+
+<spawns>
+    <spawn team="blue" kit="blue">
+        <regions yaw="90">
+            <cuboid min="-8,3,-1" max="8,7,-5"/>
+        </regions>
+    </spawn>
+    
+    <spawn team="red" kit="red">
+        <regions yaw="90">
+            <cuboid min="-8,3,-1" max="8,7,-5"/>
+        </regions>
+    </spawn>
+    <default kit="obs">
+        <regions yaw="0">
+            <cuboid min="-12,19,20" max="-17,23,15"/>
+        </regions>
+    </default>
+</spawns>
+
+<!--  Kits  -->
+
+<kits>
+    <kit id="obs">
+        <potion duration="oo">night vision</potion>
+    </kit>
+    <kit id="spawn" force="true">
+        <item slot="1" name="Recurve Bow" material="bow"/>
+        <item slot="9" amount="16" material="arrow"/>
+        <potion duration="3" amplifier="5">regeneration</potion>
+        <potion duration="oo">night vision</potion>
+    </kit>
+    <kit id="blue" parents="spawn">
+        <chestplate color="334CB2" material="leather chestplate"/>
+    </kit>
+    <kit id="red" parents="spawn">
+        <chestplate color="993333" material="leather chestplate"/>
+    </kit>
+    <kit id="Green" parents="spawn">
+        <chestplate color="667F33" material="leather chestplate"/>
+    </kit>
+    <kit id="Purple" parents="spawn">
+        <chestplate color="7F3FB2" material="leather chestplate"/>
+    </kit>
+</kits>
+
+<apply block="only-iron">
+    <region>
+        <cuboid min="-11,20,-6" max="11,1,6"/> 
+    </region>
+</apply>
+<apply block="only-diamond">
+    <region>
+        <cuboid min="-11,20,-6" max="11,1,6"/> 
+    </region>
+</apply>
+
+<filters>
+    <allow id="only-iron"><material>iron_block</material></allow>
+    <allow id="only-iron"><material>diamond_block</material></allow>
+</filters>
+
+<!--  Item Removal  -->
+
+<itemremove>
+    <item>bow</item>
+    <item>arrow</item>
+    <item>leather chestplate</item>
+</itemremove>
+</map>
