@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>untitled DTM</name>
+<version>1.0.0</version>
+<objective>Destroy both monuments to win!</objective>
+<authors>
+    <author uuid="715769c5-8c4c-4489-bdf8-f9cee2b2ae8a"/> <!-- amactus -->
+    <author uuid="7f1a3f47-36ca-4278-b423-0cfb10e23c16"/> <!-- Yaxix -->
+</authors>
+
+<!-- Monuments  -->
+
+<destroyables materials="quartz_block; quartz_stair; quartz_slab" completion="100%">
+    <destroyable name="Bow Monument" owner="cyan">
+       <region><cuboid min="-11,19,-63" max="-9,15,-61"/></region>
+    </destroyable>
+    <destroyable name="Bow Monument" owner="purple">
+       <region><cuboid min="11,19,23" max="9,15,21"/></region>
+    </destroyable>
+</destroyables>
+<destroyables materials="obsidian" completion="100%">
+    <destroyable name="Engline" owner="cyan">
+       <region><cuboid min="-11,19,-63" max="-9,15,-61"/></region>
+    </destroyable>
+    <destroyable name="Engine" owner="purple">
+       <region><cuboid min="11,19,23" max="9,15,21"/></region>
+    </destroyable>
+</destroyables>
+
+<!-- Teams, Kits and Spawns -->
+
+<teams>
+   <team id="cyan" color="cyan" max="12" max-overfill="12">Cyan</team>
+   <team id="purple" color="purple" max="12" max-overfill="12">Magenta</team>
+</teams>
+
+<kits>
+    <kit id="spawn" force="true">
+        <item slot="0" material ="iron sword"/>
+        <item slot="1" material="bow">
+            <enchantment level="1">infinity</enchantment>
+        </item>
+        <item slot="2" material ="diamond pickaxe"/>\
+        <item slot="4" material ="golden carrot" amount="64"/>
+        <item slot="28" material ="arrow"/>
+        <boots material="iron boots"/>
+    </kit>
+    <kit id="cyan" parents="spawn">
+        <chestplate color="4C7F99" material="leather chestplate"/>
+        <item slot="3" material="159:9" amount="64"/>
+    </kit>
+    <kit id="purple" parents="spawn">
+        <chestplate color="7F3FB2" material="leather chestplate"/>
+        <item slot="3" material="159:10" amount="64"/>
+    </kit>
+</kits>
+
+<spawns>
+    <spawn team="cyan" kit="cyan">
+        <regions yaw="0">
+            <cuboid min="1,20,-83" max="-1,21,-81"/>
+        </regions>
+    </spawn>
+    <spawn team="magenta" kit="magenta">
+        <regions yaw="180">
+            <cuboid min="1,20,43" max="-1,21,41"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="-90">
+            <cuboid min="-1,76,-21" max="1,76,-19"/>
+        </regions>
+    </default>
+</spawns>
+
+<!-- Settings -->
+
+<tnt>
+    <yield>0</yield>
+</tnt>
+
+<itemremove>
+    <item>iron sword</item>
+    <item>bow</item>
+    <item>diamond pickaxe</item>
+    <item>golden carrot</item>
+    <item>iron boots</item>
+    <item>leather chestplate</item>
+</itemremove>
+
+<itemkeep>
+    <item>golden apple</item>
+</itemkeep>
+
+<timelock>on</timelock>
+
+<maxbuildheight>36</maxbuildheight>
+
+<respawn delay="3s" blackout="true" auto="true"/>
+
+</map>
