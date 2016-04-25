@@ -2,7 +2,7 @@
 <map proto="1.4.0">
 <name>untitled DTM</name>
 <version>1.0.0</version>
-<objective>Destroy both monuments to win!</objective>
+<objective>Break through the enemy balloon to win!</objective>
 <authors>
     <author uuid="715769c5-8c4c-4489-bdf8-f9cee2b2ae8a"/> <!-- amactus -->
     <author uuid="7f1a3f47-36ca-4278-b423-0cfb10e23c16"/> <!-- Yaxix -->
@@ -10,28 +10,17 @@
 
 <!-- Monuments  -->
 
-<destroyables materials="quartz_block; quartz_stair; quartz_slab" completion="100%">
+<destroyables materials="wool" completion="50%">
     <destroyable name="Bow Monument" owner="cyan">
        <region><cuboid min="-11,19,-63" max="-9,15,-61"/></region>
-    </destroyable>
-    <destroyable name="Bow Monument" owner="purple">
-       <region><cuboid min="11,19,23" max="9,15,21"/></region>
-    </destroyable>
-</destroyables>
-<destroyables materials="obsidian" completion="100%">
-    <destroyable name="Engline" owner="cyan">
-       <region><cuboid min="-11,19,-63" max="-9,15,-61"/></region>
-    </destroyable>
-    <destroyable name="Engine" owner="purple">
-       <region><cuboid min="11,19,23" max="9,15,21"/></region>
     </destroyable>
 </destroyables>
 
 <!-- Teams, Kits and Spawns -->
 
 <teams>
-   <team id="cyan" color="cyan" max="12" max-overfill="12">Cyan</team>
-   <team id="purple" color="purple" max="12" max-overfill="12">Magenta</team>
+   <team id="red" color="red" max="9" max-overfill="12">Red</team>
+   <team id="blue" color="blue" max="9" max-overfill="12">Blue</team>
 </teams>
 
 <kits>
@@ -45,23 +34,23 @@
         <item slot="28" material ="arrow"/>
         <boots material="iron boots"/>
     </kit>
-    <kit id="cyan" parents="spawn">
+    <kit id="red" parents="spawn">
         <chestplate color="4C7F99" material="leather chestplate"/>
         <item slot="3" material="159:9" amount="64"/>
     </kit>
-    <kit id="purple" parents="spawn">
+    <kit id="blue" parents="spawn">
         <chestplate color="7F3FB2" material="leather chestplate"/>
         <item slot="3" material="159:10" amount="64"/>
     </kit>
 </kits>
 
 <spawns>
-    <spawn team="cyan" kit="cyan">
+    <spawn team="red" kit="red">
         <regions yaw="0">
             <cuboid min="1,20,-83" max="-1,21,-81"/>
         </regions>
     </spawn>
-    <spawn team="magenta" kit="magenta">
+    <spawn team="blue" kit="blue">
         <regions yaw="180">
             <cuboid min="1,20,43" max="-1,21,41"/>
         </regions>
@@ -86,6 +75,7 @@
     <item>golden carrot</item>
     <item>iron boots</item>
     <item>leather chestplate</item>
+    <item>arrow</item>
 </itemremove>
 
 <itemkeep>
@@ -97,5 +87,31 @@
 <maxbuildheight>36</maxbuildheight>
 
 <respawn delay="3s" blackout="true" auto="true"/>
+
+<proximity-alarms>
+    <proximity-alarm message="Enemy inside balloon!" flare-radius="3">
+        <region>
+            <cylinder base="27.5,119,-26.5" radius="7.5" height="15"/>
+        </region>
+        <detect>
+            <team>red</team>
+        </detect>
+    </proximity-alarm>
+    <proximity-alarm message="Enemy inside balloon!" flare-radius="3">
+        <region>
+            <cylinder base="27.5,119,-26.5" radius="7.5" height="15"/>
+        </region>
+        <detect>
+            <team>blue</team>
+        </detect>
+    </proximity-alarm>
+</proximity-alarms>
+
+<kill-rewards>
+    <!-- Give two emeralds for all kills -->
+    <kill-reward>
+        <item amount="1" material="golden_apple"/>
+    </kill-reward>
+</kill-rewards>
 
 </map>
