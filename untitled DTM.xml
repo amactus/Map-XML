@@ -114,4 +114,34 @@
     </kill-reward>
 </kill-rewards>
 
+<structure id="blue-fire" origin="400,64,400">
+    <region>
+        <block>X,Y,Z</block>
+    </region>
+</structure>
+<structure id="red-fire" origin="400,64,400">
+    <region>
+        <block>X,Y,Z</block>
+    </region>
+</structure>
+
+<dynamic structure="red-fire" location="36,64,0">
+    <filter>
+        <not>
+            <time>10m</time>
+        </not>
+    </filter>
+</dynamic>
+<dynamic structure="blue-fire" location="36,64,0">
+    <filter>
+        <not>
+            <time>10m</time>
+        </not>
+    </filter>
+</dynamic>
+
+<broadcasts>
+    <alert after="12.5m">Balloons have caught fire!</alert>
+</broadcasts>
+
 </map>
