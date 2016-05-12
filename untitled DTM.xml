@@ -2,7 +2,7 @@
 <map proto="1.4.0">
 <name>untitled DTM</name>
 <version>1.0.0</version>
-<objective>Break through the enemy balloon to win!</objective>
+<objective>Destroy the enemies balloon to win!</objective>
 <authors>
     <author uuid="715769c5-8c4c-4489-bdf8-f9cee2b2ae8a"/> <!-- amactus -->
     <author uuid="7f1a3f47-36ca-4278-b423-0cfb10e23c16"/> <!-- Yaxix -->
@@ -108,7 +108,6 @@
 </proximity-alarms>
 
 <kill-rewards>
-    <!-- Give two emeralds for all kills -->
     <kill-reward>
         <item amount="1" material="golden_apple"/>
     </kill-reward>
