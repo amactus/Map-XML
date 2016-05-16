@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <map proto="1.4.0">
-<name>untitled DTM</name>
+<name>Arodisae DTM</name>
 <version>1.0.0</version>
 <objective>Destroy the enemies balloon to win!</objective>
 <authors>
@@ -11,16 +11,19 @@
 <!-- Monuments  -->
 
 <destroyables materials="wool" completion="50%">
-    <destroyable name="Bow Monument" owner="cyan">
-       <region><cuboid min="-11,19,-63" max="-9,15,-61"/></region>
+    <destroyable name="Red's Balloon" owner="red">
+       <region><cuboid min="-15,32,26" max="21,20,38"/></region>
+    </destroyable>
+    <destroyable name="Blue's Balloon" owner="blue">
+       <region><cuboid min="15,32,-26" max="-21,20,-38"/></region>
     </destroyable>
 </destroyables>
 
 <!-- Teams, Kits and Spawns -->
 
 <teams>
-   <team id="red" color="red" max="9" max-overfill="12">Red</team>
-   <team id="blue" color="blue" max="9" max-overfill="12">Blue</team>
+   <team id="red" color="red" max="8" max-overfill="12">Red</team>
+   <team id="blue" color="blue" max="8" max-overfill="12">Blue</team>
 </teams>
 
 <kits>
@@ -30,34 +33,36 @@
             <enchantment level="1">infinity</enchantment>
         </item>
         <item slot="2" material ="diamond pickaxe"/>\
-        <item slot="4" material ="golden carrot" amount="64"/>
+        <item slot="4" material ="pumpkin pie" amount="64"/>
         <item slot="28" material ="arrow"/>
-        <boots material="iron boots"/>
+        <leggings material="iron leggings"/>
     </kit>
     <kit id="red" parents="spawn">
         <chestplate color="4C7F99" material="leather chestplate"/>
         <item slot="3" material="159:9" amount="64"/>
+        <boots color="4C7F99" material="leather boots"/>
     </kit>
     <kit id="blue" parents="spawn">
         <chestplate color="7F3FB2" material="leather chestplate"/>
         <item slot="3" material="159:10" amount="64"/>
+        <boots color="7F3FB2" material="leather boots"/>
     </kit>
 </kits>
 
 <spawns>
     <spawn team="red" kit="red">
         <regions yaw="0">
-            <cuboid min="1,20,-83" max="-1,21,-81"/>
+            <cuboid min="-13,13,33" max="-11,14,31"/>
         </regions>
     </spawn>
     <spawn team="blue" kit="blue">
         <regions yaw="180">
-            <cuboid min="1,20,43" max="-1,21,41"/>
+            <cuboid min="13,13,-33" max="11,14,-31"/>
         </regions>
     </spawn>
     <default>
         <regions yaw="-90">
-            <cuboid min="-1,76,-21" max="1,76,-19"/>
+            <cuboid min="-1,56,-1" max="1,57,1"/>
         </regions>
     </default>
 </spawns>
@@ -73,8 +78,9 @@
     <item>bow</item>
     <item>diamond pickaxe</item>
     <item>golden carrot</item>
-    <item>iron boots</item>
+    <item>iron leggings</item>
     <item>leather chestplate</item>
+    <item>leather boots</item>
     <item>arrow</item>
 </itemremove>
 
@@ -91,7 +97,7 @@
 <proximity-alarms>
     <proximity-alarm message="Enemy inside balloon!" flare-radius="3">
         <region>
-            <cylinder base="27.5,119,-26.5" radius="7.5" height="15"/>
+            <cuboid min="15,32,-26" max="-21,20,-38"/>
         </region>
         <detect>
             <team>red</team>
@@ -99,7 +105,7 @@
     </proximity-alarm>
     <proximity-alarm message="Enemy inside balloon!" flare-radius="3">
         <region>
-            <cylinder base="27.5,119,-26.5" radius="7.5" height="15"/>
+            <cuboid min="-15,32,26" max="21,20,38"/>
         </region>
         <detect>
             <team>blue</team>
