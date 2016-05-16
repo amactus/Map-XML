@@ -67,6 +67,23 @@
     </default>
 </spawns>
 
+<filters>
+    <filter name="iron-only" parents="deny-blocks">
+        <allow>
+            <block>iron block</block>
+        </allow>
+    </filter>
+</filters> 
+
+<regions> 
+    <region name="base-red">
+        <cuboid min="17,6,39" max="-6,12,26" /> 
+    </region>
+    <apply block-break="iron-only" block-place="deny-all allow-world" message="You may only break iron in the `4red team`b's base!">
+        <region name="base-red"/>
+    </apply>
+</regions>
+
 <!-- Settings -->
 
 <tnt>
