@@ -71,7 +71,11 @@
 </filters> 
 <regions> 
     <cuboid id="base-red" min="17,6,39" max="-6,12,26"/>
-    <apply block-break="iron-only" region="base-red" block-place="never" message="You may only break iron in the `4red team`b's base!"/>
+    <apply block-break="iron-only" region="base-red" block-place="never" message="You may only break iron blocks in your base!"/>
+</regions
+<regions> 
+    <cuboid id="base-blue" min="-17,6,-39" max="6,12,-26"/>
+    <apply block-break="iron-only" region="base-red" block-place="never" message="You may only break iron blocks in your base!"/>
 </regions>
 <!-- Settings -->
 <tnt>
