@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Arodisae BTB</name>
+<version>1.0.0</version>
+<gamemode>arcade</gamemode>
+<objective>Blow up the enemy players!</objective>
+<authors>
+    <author uuid="715769c5-8c4c-4489-bdf8-f9cee2b2ae8a"/> <!-- amactus -->
+</authors>
+<contributors>
+    <contributor uuid="7f1a3f47-36ca-4278-b423-0cfb10e23c16"/> <!-- Yaxix -->
+</contributors>
+<!-- Monuments  -->
+<!-- Teams, Kits and Spawns -->
+<teams>
+   <team id="red" color="red" max="4" max-overfill="5">Red</team>
+   <team id="blue" color="blue" max="4" max-overfill="5">Blue</team>
+</teams>
+<kits>
+    <kit id="spawn" force="true">
+        <item slot="0" projectile="firetnt" material="diamond hoe"/>
+        <item slot="1" projectile="tnt" material="golden hoe"/>
+    </kit>
+    <kit id="redk" parents="spawn">
+        <chestplate color="4C7F99" material="leather chestplate"/>
+    </kit>
+    <kit id="bluek" parents="spawn">
+        <chestplate color="7F3FB2" material="leather chestplate"/>
+    </kit>
+</kits>
+
+<spawns>
+    <spawn team="red" kit="redk">
+        <regions yaw="0">
+            <cuboid min="-13,13,33" max="-11,14,31"/>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="bluek">
+        <regions yaw="180">
+            <cuboid min="13,13,-33" max="11,14,-31"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="-90">
+            <cuboid min="-1,56,-1" max="1,57,1"/>
+        </regions>
+    </default>
+</spawns>
+<!-- Settings -->
+<itemremove>
+    <item>golden hoe</item>
+</itemremove>
+<timelock>on</timelock>
+<respawn delay="3s" blackout="true" auto="true"/>
+<hunger>
+    <depletion>off</depletion>
+</hunger>
+<blitz>
+    <lives>1</lives>
+    <broadcastLives>true</broadcastLives>
+</blitz>
+
+<!-- Time till the match ends in minutes -->
+<time>5m</time>
+
+<include src="blitz-global.xml"/>
+<projectiles>
+    <projectile
+        id="tnt"
+        name="Launcher"
+        projectile="TNTPrimed"
+        velocity="3.5"
+        damage="12"
+        throwable="false"
+        cooldown="5s"/>
+    <projectile
+        id="fire"
+        name="Fragger"
+        projectile="Fireball"
+        velocity="3.5"
+        damage="7"
+        throwable="false"
+        cooldown="3s"/>
+</projectiles>
+</map>
