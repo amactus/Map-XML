@@ -1,61 +1,61 @@
 <?xml version="1.0"?>
 <map proto="1.4.0">
-<name>Arodisae DTM</name>
+<name>Arodisae</name>
 <version>1.0.0</version>
-<objective>Destroy the enemies balloon to win!</objective>
+<gamemode>dtm</gamemode>
+<objective>Destroy the enemy's balloon to win!</objective>
 <authors>
     <author uuid="715769c5-8c4c-4489-bdf8-f9cee2b2ae8a"/> <!-- amactus -->
     <author uuid="7f1a3f47-36ca-4278-b423-0cfb10e23c16"/> <!-- Yaxix -->
 </authors>
-
 <!-- Monuments  -->
-
 <destroyables materials="wool" completion="50%">
     <destroyable name="Red's Balloon" owner="red">
-       <region><cuboid min="-15,32,26" max="21,20,38"/></region>
+       <region>
+           <cuboid min="-15,32,26" max="21,20,38"/>
+       </region>
     </destroyable>
     <destroyable name="Blue's Balloon" owner="blue">
-       <region><cuboid min="15,32,-26" max="-21,20,-38"/></region>
+       <region>
+           <cuboid min="15,32,-26" max="-21,20,-38"/>
+       </region>
     </destroyable>
 </destroyables>
-
 <!-- Teams, Kits and Spawns -->
-
 <teams>
-   <team id="red" color="red" max="8" max-overfill="12">Red</team>
-   <team id="blue" color="blue" max="8" max-overfill="12">Blue</team>
+   <team id="red" color="red" max="5" max-overfill="5">Red</team>
+   <team id="blue" color="blue" max="5" max-overfill="5">Blue</team>
 </teams>
-
 <kits>
     <kit id="spawn" force="true">
-        <item slot="0" material ="iron sword"/>
+        <item slot="0" material="iron sword"/>
         <item slot="1" material="bow">
             <enchantment level="1">infinity</enchantment>
         </item>
-        <item slot="2" material ="diamond pickaxe"/>\
-        <item slot="4" material ="pumpkin pie" amount="64"/>
-        <item slot="28" material ="arrow"/>
+        <item slot="2" material="diamond pickaxe"/>
+        <item slot="4" material="pumpkin pie" amount="64"/>
+        <item slot="28" material="arrow"/>
         <leggings material="iron leggings"/>
     </kit>
-    <kit id="red" parents="spawn">
+    <kit id="redk" parents="spawn">
         <chestplate color="4C7F99" material="leather chestplate"/>
-        <item slot="3" material="159:9" amount="64"/>
+        <item slot="3" material="stained clay" damage="9" amount="64"/>
         <boots color="4C7F99" material="leather boots"/>
     </kit>
-    <kit id="blue" parents="spawn">
+    <kit id="bluek" parents="spawn">
         <chestplate color="7F3FB2" material="leather chestplate"/>
-        <item slot="3" material="159:10" amount="64"/>
+        <item slot="3" damage="10" material="stained clay" amount="64"/>
         <boots color="7F3FB2" material="leather boots"/>
     </kit>
 </kits>
 
 <spawns>
-    <spawn team="red" kit="red">
+    <spawn team="red" kit="redk">
         <regions yaw="0">
             <cuboid min="-13,13,33" max="-11,14,31"/>
         </regions>
     </spawn>
-    <spawn team="blue" kit="blue">
+    <spawn team="blue" kit="bluek">
         <regions yaw="180">
             <cuboid min="13,13,-33" max="11,14,-31"/>
         </regions>
@@ -66,30 +66,18 @@
         </regions>
     </default>
 </spawns>
-
 <filters>
-    <filter name="iron-only" parents="deny-blocks">
-        <allow>
-            <block>iron block</block>
-        </allow>
-    </filter>
+    <material id="iron-only">iron block</material>
 </filters> 
-
 <regions> 
-    <region name="base-red">
-        <cuboid min="17,6,39" max="-6,12,26" /> 
-    </region>
-    <apply block-break="iron-only" block-place="deny-all allow-world" message="You may only break iron in the `4red team`b's base!">
-        <region name="base-red"/>
-    </apply>
+    <cuboid id="base-red" min="17,6,39" max="-6,12,26"/>
+    <apply block-break="iron-only" region="base-red" block-place="never" message="You may only break iron in the `4red team`b's base!"/>
 </regions>
-
 <!-- Settings -->
-
 <tnt>
     <yield>0</yield>
+    <power>2</power>
 </tnt>
-
 <itemremove>
     <item>iron sword</item>
     <item>bow</item>
@@ -100,17 +88,12 @@
     <item>leather boots</item>
     <item>arrow</item>
 </itemremove>
-
 <itemkeep>
     <item>golden apple</item>
 </itemkeep>
-
 <timelock>on</timelock>
-
 <maxbuildheight>36</maxbuildheight>
-
 <respawn delay="3s" blackout="true" auto="true"/>
-
 <proximity-alarms>
     <proximity-alarm message="Enemy inside balloon!" flare-radius="3">
         <region>
@@ -129,41 +112,9 @@
         </detect>
     </proximity-alarm>
 </proximity-alarms>
-
 <kill-rewards>
     <kill-reward>
         <item amount="1" material="golden_apple"/>
     </kill-reward>
 </kill-rewards>
-
-<structure id="blue-fire" origin="400,64,400">
-    <region>
-        <block>X,Y,Z</block>
-    </region>
-</structure>
-<structure id="red-fire" origin="400,64,400">
-    <region>
-        <block>X,Y,Z</block>
-    </region>
-</structure>
-
-<dynamic structure="red-fire" location="36,64,0">
-    <filter>
-        <not>
-            <time>10m</time>
-        </not>
-    </filter>
-</dynamic>
-<dynamic structure="blue-fire" location="36,64,0">
-    <filter>
-        <not>
-            <time>10m</time>
-        </not>
-    </filter>
-</dynamic>
-
-<broadcasts>
-    <alert after="12.5m">Balloons have caught fire!</alert>
-</broadcasts>
-
 </map>
