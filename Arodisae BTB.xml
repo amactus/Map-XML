@@ -49,6 +49,7 @@
 <!-- Settings -->
 <itemremove>
     <item>golden hoe</item>
+    <item>diamond hoe</item>
 </itemremove>
 <timelock>on</timelock>
 <respawn delay="3s" blackout="true" auto="true"/>
@@ -82,4 +83,8 @@
         throwable="false"
         cooldown="3s"/>
 </projectiles>
+<regions> 
+    <cuboid id="map" min="17,6,39" max="-6,12,26"/>
+    <apply block-break="never" region="map" block-place="never"/>
+</regions>
 </map>
