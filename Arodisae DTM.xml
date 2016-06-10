@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 <map proto="1.4.0">
-<name>Arodisae</name>
+<name>Arodisae DTM</name>
 <version>2.1.0</version>
-<gamemode>dtm</gamemode>
 <objective>Destroy the enemy's balloon to win!</objective>
 <authors>
     <author uuid="715769c5-8c4c-4489-bdf8-f9cee2b2ae8a"/> <!-- amactus -->
@@ -11,7 +10,7 @@
     <contributor uuid="38ab65dd-95f9-406f-917c-6accc995421f" contribution="Balloon Detailing"/> <!-- GoldenOre -->
 </contributors>
 <!-- Monuments  -->
-<destroyables materials="wool" completion="50%">
+<destroyables materials="wool" completion="50%" show-progress="true">
     <destroyable name="Red's Balloon" owner="red">
        <region>
            <cuboid min="-39,28,20" max="29,46,42"/>
