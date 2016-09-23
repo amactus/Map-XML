@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <map proto="1.4.0">
-<name>Arodisae DTM</name>
-<version>2.1.0</version>
+<name>Arodisae</name>
+<version>1.0.3</version>
 <objective>Destroy the enemy's balloon to win!</objective>
 <authors>
     <author uuid="715769c5-8c4c-4489-bdf8-f9cee2b2ae8a"/> <!-- amactus -->
