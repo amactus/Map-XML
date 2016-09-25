@@ -75,39 +75,49 @@
 <spawns>
     <spawn team="red" kit="redk">
         <regions yaw="0">
-            <cuboid min="-23,20,29" max="-19,22,23"/>
+            <cuboid min="102,11,12" max="103,11,15"/>
         </regions>
     </spawn>
     <spawn team="blue" kit="bluek">
         <regions yaw="180">
-            <cuboid min="23,20,-29" max="19,22,-23"/>
+            <cuboid min="103,11,187" max="101,11,184"/>
         </regions>
     </spawn>
     <default>
         <regions yaw="-90">
-            <cuboid min="-1,56,-1" max="1,57,1"/>
+            <cuboid min="175,45,102" max="171,45,98"/>
         </regions>
     </default>
 </spawns>
 
-<filters>
-    <material id="iron-only">iron block</material>
-</filters> 
 <regions> 
-    <cuboid id="red-iron" min="-29,9,20" max="39,7,42"/>
-    <apply block-break="iron-only" region="red-iron" block-place="never" message="You may only break iron blocks here!"/>
+    <cuboid id="blue-spawn" min="123,10,178" max="94,22,190"/>
+    <apply block-break="never" region="blue-spawn" block-place="never" message="You may not build here!"/>
 </regions>
 <regions> 
-    <cuboid id="blue-iron" min="29,9,-20" max="-39,7,-42"/>
-    <apply block-break="iron-only" region="blue-iron" block-place="never" message="You may only break iron blocks here!"/>
+    <cuboid id="red-spawn" min="76,10,26" max="111,25,10"/>
+    <apply block-break="never" region="red-spawn" block-place="never" message="You may not build here!"/>
+</regions>
+
+<regions> 
+    <cylinder base="100,0,100" radius="8" height="25"/>
+    <apply block-break="never" block-place="never" message="You may not build here!"/>
 </regions>
 <regions> 
-    <cuboid id="blue-spawn" min="15,22,-42" max="29,10,-20"/>
-    <apply block-break="never" region="red-iron" block-place="never" message="You may not edit the spawns!"/>
+    <cylinder base="80,0,48" radius="8" height="25"/>
+    <apply block-break="never" block-place="never" message="You may not build here!"/>
 </regions>
 <regions> 
-    <cuboid id="red-spawn" min="-15,22,42" max="-29,10,20"/>
-    <apply block-break="never" region="red-iron" block-place="never" message="You may not edit the spawns!"/>
+    <cylinder base="125,0,38" radius="8" height="25"/>
+    <apply block-break="never" block-place="never" message="You may not build here!"/>
+</regions>
+<regions> 
+    <cylinder base="120,0,154" radius="8" height="25"/>
+    <apply block-break="never" block-place="never" message="You may not build here!"/>
+</regions>
+<regions> 
+    <cylinder base="82,0,163" radius="8" height="25"/>
+    <apply block-break="never" block-place="never" message="You may not build here!"/>
 </regions>
 
 <!-- Settings -->
@@ -115,15 +125,12 @@
     <item>iron sword</item>
     <item>bow</item>
     <item>diamond pickaxe</item>
-    <item>golden carrot</item>
+    <item>pumpkin pie</item>
     <item>iron leggings</item>
     <item>leather chestplate</item>
     <item>leather boots</item>
     <item>arrow</item>
 </itemremove>
-<itemkeep>
-    <item>golden apple</item>
-</itemkeep>
 <timelock>on</timelock>
 <maxbuildheight>36</maxbuildheight>
 <respawn delay="3s" blackout="true" auto="true"/>
