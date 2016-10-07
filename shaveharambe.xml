@@ -33,6 +33,9 @@
         <item slot="4" damage="11" amount="64">stained glass</item>
         <item slot="5" damage="11" amount="64">wool</item>
     </kit>
+    <kit name="obs">
+        <potion amplifier="1" duration="oo">night vision</potion>
+    </kit>
 </kits>
 <spawns>
     <spawn kit="blue-kit" team="blue" yaw="-90">
@@ -41,7 +44,7 @@
     <spawn kit="red-kit" team="red" yaw="90">
         <cylinder base="0,26,0" radius="2" height="0"/>
     </spawn>
-    <default yaw="90">
+    <default kit="obs" yaw="90">
         <block>16,43,0</block>
     </default>
 </spawns>
