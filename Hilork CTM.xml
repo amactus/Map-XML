@@ -93,7 +93,7 @@
     <apply enter="blue-filter" region="blue-spawn" message="You may not enter the enemy spawn"/>
 </regions>
 <regions> 
-    <rectangle id="red-spawn" min="101,21" max="105,10q"/>
+    <rectangle id="red-spawn" min="101,21" max="105,10"/>
     <apply block-break="never" region="red-spawn" block-place="never" message="You may not build here!"/>
     <apply enter="red-filter" region="red-spawn" message="You may not enter the enemy spawn"/>
 </regions>
