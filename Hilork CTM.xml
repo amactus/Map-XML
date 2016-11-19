@@ -35,7 +35,7 @@
 
 <king>
     <hills>
-        <hill name="Gray Woolroom" capture-time="15s" points="1">
+        <hill id="hill" name="Gray Woolroom" capture-time="15s" points="1">
             <capture><cylinder id="center" base="100,15,100" radius="9" height="10"/></capture>
             <progress><cylinder id="pcenter" base="100,15,100" radius="9" height="10"/></progress>
         </hill>
@@ -127,6 +127,29 @@
      <team id="red-filter">red</team>
      <team id="blue-filter">blue</team>
 </filters>
+
+<structures>
+    <structure id="redhill" air="false">
+        <region>
+            <cuboid min="95,101,99" max="95,100,101"/>
+        </region>
+    </structure>
+    <structure id="bluehill" air="false">
+        <region>
+            <cuboid min="105,101,101" max="105,100,99"/>
+        </region>
+    </structure>
+    <dynamic structure="redhill" offset="0,-84,0">
+        <filter>
+            <objective team="red">hill</objective>
+        </filter>
+    </dynamic>
+    <dynamic structure="bluehill" offset="0,-84,0">
+        <filter>
+            <objective team="blue">hill</objective>
+        </filter>
+    </dynamic>
+</structures>
 
 <!-- Settings -->
 <itemremove>
