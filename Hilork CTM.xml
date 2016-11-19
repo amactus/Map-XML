@@ -91,35 +91,28 @@
     <rectangle id="blue-spawn" min="104,179" max="100,190"/>
     <apply block-break="never" region="blue-spawn" block-place="never" message="You may not build here!"/>
     <apply enter="blue-filter" region="blue-spawn" message="You may not enter the enemy spawn"/>
-</regions>
-<regions> 
+
     <rectangle id="red-spawn" min="101,21" max="105,10"/>
     <apply block-break="never" region="red-spawn" block-place="never" message="You may not build here!"/>
     <apply enter="red-filter" region="red-spawn" message="You may not enter the enemy spawn"/>
-</regions>
 
-<regions> 
     <cylinder id="cyanwool" base="82,17,163" radius="8" height="25"/>
-    <apply block-break="never" block-place="never" message="You may not build here!"/>
+    <apply block-break="never" region="cyanwool" block-place="never" message="You may not build here!"/>
     <apply enter="red-filter" region="cyanwool" message="You may not enter the enemy woolroom"/>
-</regions>
-<regions> 
+
     <cylinder id="bluewool" base="120,15,154" radius="8" height="25"/>
-    <apply block-break="never" block-place="never" message="You may not build here!"/>
+    <apply block-break="never" region="bluewool" block-place="never" message="You may not build here!"/>
     <apply enter="red-filter" region="bluewool" message="You may not enter the enemy woolroom"/>
-</regions>
-<regions> 
-    <cylinder base="100,16,99" radius="8" height="25"/>
-    <apply block-break="never" block-place="never" message="You may not build here!"/>
-</regions>
-<regions> 
+
+    <cylinder base="100,16,99" id="graywool" radius="8" height="25"/>
+    <apply block-break="never" region="graywool" block-place="never" message="You may not build here!"/>
+
     <cylinder id="redwool" base="80,15,48" radius="8" height="25"/>
-    <apply block-break="never" block-place="never" message="You may not build here!"/>
+    <apply block-break="never" region="redwool" block-place="never" message="You may not build here!"/>
     <apply enter="blue-filter" region="redwool" message="You may not enter the enemy woolroom"/>
-</regions>
-<regions> 
+
     <cylinder id="orangewool" base="125,15,38" radius="8" height="25"/>
-    <apply block-break="never" block-place="never" message="You may not build here!"/>
+    <apply block-break="never" region="orangewool" block-place="never" message="You may not build here!"/>
     <apply enter="blue-filter" region="redwool" message="You may not enter the enemy woolroom"/>
 </regions>
     
