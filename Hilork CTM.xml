@@ -36,8 +36,8 @@
 <king>
     <hills>
         <hill name="Gray Woolroom" capture-time="15s" points="1">
-            <capture><cylinder id="center" base="100,15,100" radius="8" height="10"/></capture>
-            <progress><cylinder id="pcenter" base="100,15,100" radius="8" height="10"/></progress>
+            <capture><cylinder id="center" base="100,15,100" radius="9" height="10"/></capture>
+            <progress><cylinder id="pcenter" base="100,15,100" radius="9" height="10"/></progress>
         </hill>
     </hills>
 </king>
@@ -88,34 +88,45 @@
 </spawns>
 
 <regions> 
-    <cuboid id="blue-spawn" min="123,10,178" max="94,22,190"/>
+    <rectangle id="blue-spawn" min="104,179" max="100,190"/>
     <apply block-break="never" region="blue-spawn" block-place="never" message="You may not build here!"/>
+    <apply enter="blue-filter" region="blue-spawn" message="You may not enter the enemy spawn"/>
 </regions>
 <regions> 
-    <cuboid id="red-spawn" min="76,10,26" max="111,25,10"/>
+    <rectangle id="red-spawn" min="101,21" max="105,10q"/>
     <apply block-break="never" region="red-spawn" block-place="never" message="You may not build here!"/>
+    <apply enter="red-filter" region="red-spawn" message="You may not enter the enemy spawn"/>
 </regions>
 
 <regions> 
-    <cylinder base="100,0,100" radius="8" height="25"/>
+    <cylinder id="cyanwool" base="82,17,163" radius="8" height="25"/>
+    <apply block-break="never" block-place="never" message="You may not build here!"/>
+    <apply enter="red-filter" region="cyanwool" message="You may not enter the enemy woolroom"/>
+</regions>
+<regions> 
+    <cylinder id="bluewool" base="120,15,154" radius="8" height="25"/>
+    <apply block-break="never" block-place="never" message="You may not build here!"/>
+    <apply enter="red-filter" region="bluewool" message="You may not enter the enemy woolroom"/>
+</regions>
+<regions> 
+    <cylinder base="100,16,99" radius="8" height="25"/>
     <apply block-break="never" block-place="never" message="You may not build here!"/>
 </regions>
 <regions> 
-    <cylinder base="80,0,48" radius="8" height="25"/>
+    <cylinder id="redwool" base="80,15,48" radius="8" height="25"/>
     <apply block-break="never" block-place="never" message="You may not build here!"/>
+    <apply enter="blue-filter" region="redwool" message="You may not enter the enemy woolroom"/>
 </regions>
 <regions> 
-    <cylinder base="125,0,38" radius="8" height="25"/>
+    <cylinder id="orangewool" base="100,16,101" radius="8" height="25"/>
     <apply block-break="never" block-place="never" message="You may not build here!"/>
+    <apply enter="blue-filter" region="orangewool" message="You may not enter the enemy woolroom"/>
 </regions>
-<regions> 
-    <cylinder base="120,0,154" radius="8" height="25"/>
-    <apply block-break="never" block-place="never" message="You may not build here!"/>
-</regions>
-<regions> 
-    <cylinder base="82,0,163" radius="8" height="25"/>
-    <apply block-break="never" block-place="never" message="You may not build here!"/>
-</regions>
+    
+<filters>
+     <team id="red-filter">red</team>
+     <team id="blue-filter">blue</team>
+</filters>
 
 <!-- Settings -->
 <itemremove>
