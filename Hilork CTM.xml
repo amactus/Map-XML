@@ -118,9 +118,9 @@
     <apply enter="blue-filter" region="redwool" message="You may not enter the enemy woolroom"/>
 </regions>
 <regions> 
-    <cylinder id="orangewool" base="100,16,101" radius="8" height="25"/>
+    <cylinder id="orangewool" base="125,15,38" radius="8" height="25"/>
     <apply block-break="never" block-place="never" message="You may not build here!"/>
-    <apply enter="blue-filter" region="orangewool" message="You may not enter the enemy woolroom"/>
+    <apply enter="blue-filter" region="redwool" message="You may not enter the enemy woolroom"/>
 </regions>
     
 <filters>
