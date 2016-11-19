@@ -10,17 +10,17 @@
 <!-- Monuments & Cores -->
 
 <destroyables materials="emerald_block" completion="100%">
-    <destroyable name="Left Monument" owner="cyan">
-       <region><cuboid min="-11,19,-63" max="-9,15,-61"/></region>
-    </destroyable>
-    <destroyable name="Right Monuemnt" owner="cyan">
-       <region><cuboid min="9,19,-63" max="11,15,-61"/></region>
-    </destroyable>
     <destroyable name="Left Monument" owner="purple">
-       <region><cuboid min="11,19,23" max="9,15,21"/></region>
+       <region><cuboid min="-11,19,-23" max="-9,15,21"/></region>
     </destroyable>
     <destroyable name="Right Monuemnt" owner="purple">
-       <region><cuboid min="-9,19,23" max="-11,15,21"/></region>
+       <region><cuboid min="9,19,23" max="11,15,21"/></region>
+    </destroyable>
+    <destroyable name="Left Monument" owner="cyan">
+       <region><cuboid min="9,19,-63" max="11,15,-61"/></region>
+    </destroyable>
+    <destroyable name="Right Monuemnt" owner="cyan">
+       <region><cuboid min="-9,19,-63" max="-11,15,-61"/></region>
     </destroyable>
 </destroyables>
 
