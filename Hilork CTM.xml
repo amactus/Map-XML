@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<map proto="1.4.0">
+<map proto="1.4.2">
 <name>Hilork CTM</name>
 <version>1.0.0</version>
 <objective>Capture all 3 wools to win!</objective>
@@ -34,7 +34,7 @@
 </wools>
 
 <control-points capture-players="lead" incremental="true" show-progress="true">
-    <control-point name="Gray Woolroom" capture-time="30s">
+    <control-point id="hill" name="Gray Woolroom" capture-time="30s">
         <capture><cylinder base="100,16,100" radius="9" height="10"/></capture>
         <progress><cylinder base="100,16,100" radius="9" height="10"/></progress>
         <captured><cylinder base="100,16,100" radius="9" height="10"/></captured>
@@ -133,12 +133,12 @@
     </structure>
     <dynamic structure="redhill" offset="0,-84,0">
         <filter>
-            <objective team="red">Gray Woolroom</objective>
+            <objective team="red">hill</objective>
         </filter>
     </dynamic>
     <dynamic structure="bluehill" offset="0,-84,0">
         <filter>
-            <objective team="blue">Gray Woolroom</objective>
+            <objective team="blue">hill</objective>
         </filter>
     </dynamic>
 </structures>
