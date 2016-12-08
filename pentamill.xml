@@ -85,6 +85,14 @@
         </regions>
     </default>
 </spawns>
+    
+<regions>
+    <rectangle id="cyanspawn" min="-13,-80" max="14,-89"/>
+    <circle id="cyanspawn2" center="0,-82" radius="6"/>
+    <apply block="never" region="cyanspawn"/>
+    <apply block="never" region="cyanspawn2"/>
+    <rectangle id="magentaspawn" min="-14,47" max="14,40"/>
+    <circle id="magentaspawn2" center="0,42" radius="6"/>
 
 <!-- Settings -->
 
