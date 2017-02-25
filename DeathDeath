@@ -3,16 +3,25 @@
 <name>Death Death</name>
 <version>123.456.789</version>
 <authors>
-    <author uuid="ef4ea031-998f-4ec9-b7b6-1bdd428bcef8"/> <!-- pik -->
-    <author uuid="9b5dc000-c120-4737-9473-76d6816a0dc9"/> <!-- p-->
+    <author uuid="715769c5-8c4c-4489-bdf8-f9cee2b2ae8a"/> <!-- amac -->
+    <author uuid="9b5dc000-c120-4737-9473-76d6816a0dc9"/> <!-- pik -->
 </authors>
+<teams>
+   <team id="red" color="blue" max="1" max-overfill="1">Red</team>
+   <team id="blue" color="dark red" max="1" max-overfill="1">Blue</team>
+</teams>
+<score>
+    <limit>1</limit>
+    <kills>1</kills>
+    <deaths>-69</deaths>
+</score>
 <spawns>
-    <spawn team="blue" yaw="90">29.5,22,29.5</spawn>
-    <spawn team="red" yaw="-90">17.5,22,29.5</spawn>
-    <default yaw="180">24,22,37</default>
+    <spawn team="blue" yaw="90">12.5,7,0.5</spawn>
+    <spawn team="red" yaw="-90">-11.5,7,0.5</spawn>
+    <default>
+        <regions yaw="0">
+            <cuboid min="-7.5,4,-4.5" max="8.5,13,5.5"/>
+        </regions>
+    </default>
 </spawns>
-<cores material="obsidian" leak="3" mode-changes="true">
-    <core team="blue"><cuboid min="31,37,28" max="34,40,31"/></core>
-    <core team="red"><cuboid min="14,37,28" max="17,40,31"/></core>
-</cores>
 </map>
